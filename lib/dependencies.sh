@@ -88,7 +88,7 @@ yarn_node_modules() {
 
   echo "Installing node modules (yarn.lock)"
   cd "$build_dir" || return
-  monitor "yarn-install" yarn install --frozen-lockfile 2>&1
+  monitor "yarn-install" yarn install --immutable --immutable-cache 2>&1
 }
 
 yarn_prune_devdependencies() {
